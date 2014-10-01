@@ -40,7 +40,7 @@ Note that you have to do this *only once* as the configuration is kept on a file
  
 **How does it work?**
 
-Ok, imagine you have your commit loaded on your repository and you decide you wan to commit something. In your commit message you have to reference the related case this commit is against, so the simplest and clean thing you can do is prepend it to your commit message
+Ok, imagine you have the hook loaded on your repository and you decide you want to commit something. In your commit message you have to reference the related case this commit is against, so the simplest and clean thing you can do is prepend it to your commit message
 
 ```bash
 $> git commit -m "[24587] This is my first commit"
