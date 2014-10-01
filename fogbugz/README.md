@@ -14,9 +14,10 @@ If any of those checks are failing the commit will be refused. You can use the s
 
 **How do I install it?**
 
-The prerequisite to run the hook is Python 2.5+, so please follow the instruction for your operating system to install it. You will have then to install the [Fogbugz client library](https://developers.fogbugz.com/default.asp?W197) and then you have to copy on your repository the commit-hook script getting it from the repo.
-
-Assuming you are sitting in the repository root folder you can execute this two commands:
+Steps:
+*  make sure you have Python 2.5+ installed: if not please follow the instruction for your operating system to install it, Be aare that Python3 is not supported
+*  install the [Fogbugz client library](https://developers.fogbugz.com/default.asp?W197) (if you have pip just digit *sudo pip install fogbugz*)
+*  copy to your repository the commit-hook script getting it from the repo.Assuming you are sitting in the repository root folder you can execute this two commands:
 
 ```bash
 wget https://raw.githubusercontent.com/workshare/git-commit-hooks/master/fogbugz/commit-msg -O .git/hooks/commit-msg
