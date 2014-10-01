@@ -42,7 +42,7 @@ Note that you have to do this *only once* as the configuration is kept on a file
 
 Ok, imagine you have the hook loaded on your repository and you decide you want to commit something. In your commit message you have to reference the case this commit is related to: the simplest and cleanest thing you can do is prepend it to your commit message
 
-```bash
+```
 $> git commit -m "[24587] This is my first commit"
 
 > FOGBUGZ commit hook  === c/o Workshare Ltd ===
