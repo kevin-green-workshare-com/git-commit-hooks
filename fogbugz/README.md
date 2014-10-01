@@ -16,7 +16,7 @@ If any of those checks are failing the commit will be refused. You can use the s
 
 Steps:
 *  make sure you have Python 2.5+ installed (*python --version*): if not please follow the instruction for your operating system to install it, Be aare that Python3 is not supported
-*  install the [Fogbugz client library](https://developers.fogbugz.com/default.asp?W197) (if you have pip just digit *sudo pip install fogbugz*)
+*  install the [Fogbugz client library](https://developers.fogbugz.com/default.asp?W197) (if you have pip just digit *pip install fogbugz* or *sudo pip install fogbugz* if the previous do not work)
 *  copy to your repository the commit-hook script getting it from the repo.Assuming you are sitting in the repository root folder you can execute this two commands:
 
 ```bash
