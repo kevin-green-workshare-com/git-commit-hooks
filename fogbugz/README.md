@@ -19,7 +19,7 @@ The prerequisite to run the hook is Python 2.5+, so please follow the instructio
 Assuming you are sitting in the repository root folder you can execute this two commands:
 
 ```bash
-wget https://raw.githubusercontent.com/workshare/git-commit-hooks/master/fogbugz/commit-msg
+wget https://raw.githubusercontent.com/workshare/git-commit-hooks/master/fogbugz/commit-msg -O .git/hooks/commit-msg
 chmod +x .git/hooks/commit-msg
 ```
 
