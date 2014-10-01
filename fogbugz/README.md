@@ -34,7 +34,7 @@ The script needs to access fogbugz and for that reason you will need to setup an
 ```
 
 
-Note that you have to do this once as the configuration is kept on a file on your local home (no need to do this step for every repository you setup the hook against)
+Note that you have to do this *only once* as the configuration is kept on a file on your local home (no need to do this step for every repository you setup the hook against)
 
  
 **How does it work?**
