@@ -10,7 +10,8 @@ In order to validate your commits a client commit hook must be installed on your
   * checks that the cases areopen
 
 If any of those checks are failing the commit will be refused. You can use the special keyword NOFOGZ anywhere in your commit to skip the control, or you can use "-n" parameter in your commit to exclude all your local verification, but please do that only in case of emergencies (you may have to explain why)
- 
+
+
 **How do I install it?**
 
 The prerequisite to run the hook is Python 2.5+, so please follow the instruction for your operating system to install it. You will have then to install the Fogbugz client library and then you have to copy on your repository the commit-hook script getting it from the repo.
@@ -47,7 +48,7 @@ $> git commit -m "[24587] This is my first commit"
 >
 > Detected cases ['24587']
 > Checking cases...
->  case 24587, OPEN - Unable to download pdf (via api) for files that have restricted download permissions
+>  case 24587, OPEN - Unable to do upgrade the goffaw (via api) for restricted files
 >
 > SUCCESS - Commit accepted!
 
@@ -55,6 +56,7 @@ $> git commit -m "[24587] This is my first commit"
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 444
 ```
+When the criteria are not accepted, a meaningful message will be displayed and the commit will be rejected :)
 
 
 **Troubleshooting**
@@ -69,7 +71,6 @@ What should I do?
 
 **A.** Your access token to fogbugz has been compromised or it's not valid anymore. Please re-execute the setup as described in the "How do I configure it?" section of this wiki page
 
- 
 
 **Q.** When I commit I am getting this message:
 
@@ -78,9 +79,8 @@ File ".git/hooks/commit-msg", line 119
     print '> '
 
       SyntaxError: invalid syntax
-
-What should I do?
 ```
+What should I do?
 
 **A.** You are using Python3, where print statements are now functions (hooray!). To sort this out you will have to install Python2 and setup the fogbugz library using the manual install procedure.
 
