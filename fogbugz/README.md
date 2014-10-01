@@ -14,7 +14,7 @@ If any of those checks are failing the commit will be refused. You can use the s
 
 **How do I install it?**
 
-The prerequisite to run the hook is Python 2.5+, so please follow the instruction for your operating system to install it. You will have then to install the Fogbugz client library and then you have to copy on your repository the commit-hook script getting it from the repo.
+The prerequisite to run the hook is Python 2.5+, so please follow the instruction for your operating system to install it. You will have then to install the [Fogbugz client library](https://developers.fogbugz.com/default.asp?W197) and then you have to copy on your repository the commit-hook script getting it from the repo.
 
 Assuming you are sitting in the repository root folder you can execute this two commands:
 
@@ -82,5 +82,5 @@ File ".git/hooks/commit-msg", line 119
 ```
 What should I do?
 
-**A.** You are using Python3, where print statements are now functions (hooray!). To sort this out you will have to install Python2 and setup the fogbugz library using the manual install procedure.
+**A.** You are using Python3, where [print statements are now functions](http://stackoverflow.com/questions/826948/syntax-error-on-print-with-python-3) (hooray!). To sort this out you will have to install Python2 and setup the fogbugz library using the manual install procedure.
 
