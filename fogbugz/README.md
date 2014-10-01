@@ -20,7 +20,7 @@ Steps:
 *  copy to your repository the commit-hook script getting it from the repo.Assuming you are sitting in the repository root folder you can execute this two commands:
 
 ```bash
-wget https://raw.githubusercontent.com/workshare/git-commit-hooks/master/fogbugz/commit-msg -O .git/hooks/commit-msg
+curl https://raw.githubusercontent.com/workshare/git-commit-hooks/master/fogbugz/commit-msg -o .git/hooks/commit-msg
 chmod +x .git/hooks/commit-msg
 ```
 
