@@ -7,7 +7,7 @@ In order to validate your commits a client commit hook must be installed on your
     * case:123456
     * case#123456
   * checks that the cases referenced exist
-  * checks that the cases areopen
+  * checks that the cases are open
 
 If any of those checks are failing the commit will be refused. You can use the special keyword NOFOGZ anywhere in your commit to skip the control, or you can use "-n" parameter in your commit to exclude all your local verification, but please do that only in case of emergencies (you may have to explain why)
 
