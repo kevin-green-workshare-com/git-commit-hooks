@@ -88,7 +88,7 @@ What should I do?
 
 **Q. This commit hook does not with [Sourcetree](http://www.sourcetreeapp.com/)**
 
-**A.** This is a common issue with this Atlassian product: if this is happening to you you will have to add a preliminary batch to fix the system path before running the real commit hook. So please rename the commit-msg file to commit-msg-internal and create a new commit-msg file (same place) with these contents:
+**A.** This is a common issue with this Atlassian product: if this is happening to you you will have to add a preliminary script to fix the system path before running the real commit hook. So please rename the commit-msg file to commit-msg-internal and create a new commit-msg file (same place) with these contents:
 ```bash
 export PATH="/usr/local/bin:$PATH"
 $(dirname $0)/commit-msg-internal $*
