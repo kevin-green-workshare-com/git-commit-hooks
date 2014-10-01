@@ -1,4 +1,4 @@
-**Why do we have this?**
+###Why do we have this?###
 
 In order to validate your commits a client commit hook must be installed on your repository. This is a Python script that it's executed each time you try to commit on your repo and it does these checks:
 
@@ -12,7 +12,7 @@ In order to validate your commits a client commit hook must be installed on your
 If any of those checks are failing the commit will be refused. You can use the special keyword NOFOGZ anywhere in your commit to skip the control, or you can use "-n" parameter in your commit to exclude all your local verification, but please do that only in case of emergencies (you may have to explain why)
 
 
-**How do I install it?**
+###How do I install it?###
 
 Steps:
 *  make sure you have Python 2.5+ installed (*python --version*): if not please follow the instruction for your operating system to install it, Be aare that Python3 is not supported
@@ -25,7 +25,7 @@ chmod +x .git/hooks/commit-msg
 ```
 
 
-**How do I configure it?**
+###How do I configure it?###
 
 The script needs to access fogbugz and for that reason you will need to setup an access token before starting using the script the first time. Assuming you are sitting in the repository root folder you have to execute this command:
 
@@ -38,7 +38,7 @@ The script needs to access fogbugz and for that reason you will need to setup an
 Note that you have to do this *only once* as the configuration is kept on a file on your local home (no need to do this step for every repository you setup the hook against)
 
  
-**How does it work?**
+###How does it work?###
 
 Ok, imagine you have the hook loaded on your repository and you decide you want to commit something. In your commit message you have to reference the case this commit is related to: the simplest and cleanest thing you can do is prepend it to your commit message
 
@@ -60,9 +60,9 @@ $> git commit -m "[24587] This is my first commit"
 When the criteria are not accepted, a meaningful message will be displayed and the commit will be rejected :)
 Note that you can reference multiple cases in your commit message, mixing the reference syntax used, but then all of them will be tested and verified.
 
-**Troubleshooting**
+###Troubleshooting###
 
-**Q.** When I commit I am getting this message:
+**Q. When I commit I am getting this message:**
 
 ```bash
 FAILED - Temporarily unable to connect to fogbugz: Error Code 3: <![CDATA[Not logged in]]>
@@ -73,7 +73,7 @@ What should I do?
 **A.** Your access token to fogbugz has been compromised or it's not valid anymore. Please re-execute the setup as described in the "How do I configure it?" section of this wiki page
 
 
-**Q.** When I commit I am getting this message:
+**Q. When I commit I am getting this message:**
 
 ```bash
 File ".git/hooks/commit-msg", line 119
@@ -85,3 +85,11 @@ What should I do?
 
 **A.** You are using Python3, where [print statements are now functions](http://stackoverflow.com/questions/826948/syntax-error-on-print-with-python-3) (hooray!). To sort this out you will have to install Python2 and setup the fogbugz library using the manual install procedure.
 
+
+**Q. This commit hook does not with [Sourcetree](http://www.sourcetreeapp.com/)**
+
+**A.** This is a common issue with this Atlassian product: if this is happening to you you will have to add a preliminary batch to fix the system path before running the real commit hook. So please rename the commit-msg file to commit-msg-internal and create a new commit-msg file (same place) with these contents:
+```bash
+export PATH="/usr/local/bin:$PATH"
+$(dirname $0)/commit-msg-internal $*
+```
