@@ -30,7 +30,7 @@ The script needs to access fogbugz and for that reason you will need to setup an
 
 
 ```bash
-.git/hooks/commit-msg setup-credentials your-email@domain.com your-fogbugz-password
+.git/hooks/commit-msg setup your-email@domain.com your-fogbugz-password
 ```
 
 
