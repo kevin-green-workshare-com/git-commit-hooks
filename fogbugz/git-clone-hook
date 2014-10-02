@@ -1,0 +1,28 @@
+#!/bin/bash
+
+args=${@: 1:$(($#-1))}
+address=${@: -1}
+
+address_regex='(git@|https:)'
+if ! [[ $address =~ $address_regex ]]; then
+  address=${@: -2:1}
+  dir=${@: -1:1}
+  args=${@: 1:$(($#-2))}
+fi
+
+if [ -z $dir ]; then dir=$(echo $address | sed -e 's/.*:\|.*\/\|\.git//g'); fi
+if [ -d $dir ]; then dir=${dir}$(date +%Y%m%d); fi
+
+git clone $args $address $dir
+
+echo "--REPOSITORY CLONED--"
+
+workshare_regex='([:/]workshare/)'
+
+if [[ $address =~ $workshare_regex ]]; then
+  cd $dir
+  wget https://raw.githubusercontent.com/workshare/git-commit-hooks/master/fogbugz/commit-msg -O .git/hooks/commit-msg
+  chmod +x .git/hooks/commit-msg
+
+  echo "--HOOK INSTALLED--"
+fi
