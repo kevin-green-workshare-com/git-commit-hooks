@@ -60,6 +60,17 @@ $> git commit -m "[24587] This is my first commit"
 When the criteria are not accepted, a meaningful message will be displayed and the commit will be rejected :)
 Note that you can reference multiple cases in your commit message, mixing the reference syntax used, but then all of them will be tested and verified.
 
+
+###Custom command###
+
+
+There's a custom git command script uploaded as [git-clone-hook](git-clone-hook), copy this script to any folder in your PATH and give it execute permissions and it will be available for auto-installing the hook when you clone a repository.
+
+```bash
+git clone-hook [options] <repository> [<directory>]
+```
+
+
 ###Troubleshooting###
 
 **Q. When I commit I am getting this message:**
