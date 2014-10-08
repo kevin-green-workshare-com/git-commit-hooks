@@ -81,7 +81,7 @@ class Fogz:
         return issues
 
     def dispose(self):
-        self._kill_token()
+        _kill_token()
 
 #
 # Token management
@@ -184,10 +184,10 @@ try:
         sysexit("FAILED - Some issues referenced in this commit are closed!", False)
   
 except Exception as ex:
+    sysexit("FAILED - Temporarily unable to connect to fogbugz: "+str(ex), False)
     if fogz != None: 
         fogz.dispose();
 
-    sysexit("FAILED - Temporarily unable to connect to fogbugz: "+str(ex), False)
 
 sysexit("SUCCESS - Commit accepted!", True)
 
