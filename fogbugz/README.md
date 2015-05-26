@@ -35,7 +35,9 @@ The script needs to access fogbugz and for that reason you will need to setup an
 ```
 
 
-Note that you have to do this *only once* as the configuration is kept on a file on your local home (no need to do this step for every repository you setup the hook against)
+Note that you have to do this *only once* as the configuration is kept on a file on your local home (no need to do this step for every repository you setup the hook against).
+
+Note: If you have spaces in your password you will have to encode them: 'my password' becomes 'my%20password'
 
  
 ###How does it work?###
